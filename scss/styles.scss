@@ -1,0 +1,429 @@
+@import "normalize";
+@import "variables";
+
+* {
+  font-family: primaryFont;
+  box-sizing: border-box;
+}
+
+// common ---------------------------------
+
+.container {
+  max-width: 100%;
+  width: 990px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 30px;
+  text-decoration: none;
+  margin: 0 7px;
+  transition: ease-in-out 0.2s;
+
+  &--contained {
+    color: $secondary-color;
+    background-color: $primary-color;
+    border: $secondary-color 1px solid;
+
+    &:hover {
+      color: $primary-color;
+      background-color: lighten($primary-color, 80%);
+      border: $primary-color 1px solid;
+    }
+  }
+
+  &--outlined {
+    color: $primary-color;
+    background-color: $secondary-color;
+    border: $primary-color 1px solid;
+
+    &:hover {
+      background-color: lighten($primary-color, 80%);
+    }
+  }
+}
+
+// topbar ------------------------
+
+.topbar {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 16px 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo {
+    height: 43px;
+    width: auto;
+  }
+
+  &__phone {
+    display: inline;
+    text-decoration: none;
+    color: currentColor;
+    font-size: 26px;
+    line-height: 28px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// banner ------------------------
+
+.banner {
+  background-image: url("../images/0095EUIV2018RT-original.jpg");
+  max-height: 650px;
+  min-height: 320px;
+  height: calc(100vh - 120px);
+  background-size: 3500px;
+  background-position: 12% 76%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__content {
+    color: $secondary-color;
+    max-width: calc(100% - 60px);
+    width: 600px;
+    background-color: rgba(94, 182, 233, 0.5);
+    text-align: center;
+    padding: 30px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 62px;
+    line-height: 66px;
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin: 12.5px auto;
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 100;
+  }
+}
+
+// campaign -----------------
+
+.campaign {
+  padding: 28px 0;
+  border-bottom: 1px solid #ccc;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &__title {
+    font-family: secondaryFont;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 44px;
+    line-height: 36px;
+    font-weight: 900;
+    margin: 15px 0 45px;
+  }
+
+  &__video {
+    display: block;
+    float: left;
+    width: 475px;
+    height: 270px;
+    margin-right: 15px;
+  }
+
+  &__description {
+    float: right;
+    width: calc(100% - 500px);
+    font-size: 17px;
+    line-height: 19px;
+
+    p {
+      margin: 3px 0 0;
+    }
+
+    strong {
+      margin: 14px 0;
+      font-weight: 700;
+      display: block;
+    }
+
+    a:first-of-type {
+      margin-right: 13px;
+    }
+  }
+}
+
+// journeys -----------------
+
+.journeys {
+  padding: 0;
+  @include display-column;
+
+  &__list {
+    width: 100%;
+    margin: 24px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 38px;
+    margin: 30px 0;
+  }
+
+  &__link {
+    color: $primary-color;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 18px;
+  }
+}
+
+.journey {
+  @include display-column;
+  text-transform: uppercase;
+  width: 300px;
+  max-width: 100%;
+  margin: 0;
+
+  &__image {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 300px;
+    height: auto;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    max-width: 290px;
+    text-align: center;
+  }
+
+  &__description {
+    font-size: 20px;
+    line-height: 22px;
+    margin: 0;
+  }
+
+  &__button {
+    margin: 10px 0;
+  }
+}
+
+// discount ---------------------
+
+.discount {
+  background-color: $primary-color;
+  @include display-column;
+  padding: 30px 0;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+
+  &__title {
+    text-transform: uppercase;
+    color: #a6d0ed;
+    font-size: 26px;
+    line-height: 30px;
+    margin: 0;
+  }
+
+  &__description {
+    margin: 0;
+  }
+
+  &__deal {
+    text-transform: uppercase;
+    font-family: secondaryFont;
+    font-size: 62px;
+    line-height: 70px;
+    margin: 0;
+  }
+
+  &__highlight {
+    color: white;
+    width: 480px;
+    margin: 18px auto 14px;
+  }
+
+  &__early-discount {
+    p {
+      margin: 0;
+      line-height: 18px;
+    }
+  }
+}
+
+// offers ------------
+
+.offers {
+  background-color: white;
+  display: flex;
+  gap: 20px 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0;
+  margin: 0;
+
+  &__details {
+    text-align: justify;
+    margin: 32px 0;
+    font-size: 12px;
+  }
+
+  &__divider {
+    margin: 10px 0;
+  }
+}
+
+.offer {
+  @include display-column;
+  background-color: $primary-color;
+  color: $secondary-color;
+  margin: 0;
+  padding: 16px 20px 24px;
+  width: 300px;
+
+  &__title {
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-family: secondaryFont;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 9px;
+  }
+}
+
+// footer --------------------
+
+.footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+  @include display-column;
+  padding: 5px 0;
+
+  &__logos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+
+  &__logo {
+    margin: 5px 10px;
+  }
+
+  &__rights {
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .campaign {
+    @include display-column;
+
+    &__video {
+      width: 80vw;
+      height: 45vw;
+      margin: 0;
+    }
+
+    &__description {
+      width: 80vw;
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .banner {
+    &__content {
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  .campaign {
+    &__title {
+      margin: 0 0 30px;
+    }
+
+    &__description {
+      width: 100%;
+    }
+  }
+
+  .button {
+    width: 100%;
+    margin: 7px 0;
+  }
+
+  .discount {
+    &__highlight {
+      width: 75vw;
+    }
+  }
+
+  .journeys__title {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .topbar {
+    &__content {
+      padding-top: 15px;
+      padding-bottom: 12px;
+      flex-direction: column;
+    }
+
+    &__phone {
+      margin-top: 5px;
+    }
+  }
+}

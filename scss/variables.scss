@@ -1,0 +1,17 @@
+@font-face {
+  font-family: secondaryFont;
+  src: url(../fonts/effra_std_bd-webfont.woff) format("woff");
+}
+@font-face {
+  font-family: primaryFont;
+  src: url(../fonts/effra_std_rg_2-webfont.woff) format("woff");
+}
+
+$primary-color: #081e3f;
+$secondary-color: #fff;
+
+@mixin display-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
